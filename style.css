@@ -205,7 +205,6 @@
     object-fit:contain; object-position:center 42%;
     filter:drop-shadow(0 0 14px rgba(255,45,63,0.5)) drop-shadow(0 0 36px rgba(255,45,63,0.28));
     animation: flicker 5s ease-in-out infinite;
-    mix-blend-mode:screen;
   }
   @keyframes flicker{
     0%,100%{ opacity:1; }
@@ -425,12 +424,6 @@
       radial-gradient(circle at 50% 45%, rgba(255,45,63,0.22), transparent 65%),
       linear-gradient(180deg, rgba(10,9,8,0.35), rgba(10,9,8,0.85) 78%, rgba(10,9,8,0.95));
   }
-  .course-visual .big-num{
-    position:relative; z-index:2;
-    font-family:var(--display); font-size:clamp(90px,12vw,160px); color:transparent;
-    -webkit-text-stroke:1.5px rgba(255,240,230,0.55); line-height:1;
-    filter:drop-shadow(0 4px 18px rgba(0,0,0,0.6));
-  }
   .course-visual .badge{
     position:absolute; bottom:18px; left:18px; right:18px; z-index:2;
     background:rgba(10,9,8,0.82); border:1px solid var(--card-line); padding:14px 18px;
@@ -585,12 +578,13 @@
   /* ================= RESPONSIVE ================= */
   @media (max-width: 1080px){
     .hero-grid{ grid-template-columns:1fr; }
-    .hero-visual{ max-width:420px; margin-top:20px; }
+    .hero-visual{ max-width:420px; margin-top:20px; padding-bottom:70px; }
+    .floating-rating{ position:static; margin-top:18px; display:inline-flex; }
     .why-grid{ grid-template-columns:1fr; }
     .about-grid{ grid-template-columns:1fr; }
     .about-img-frame{ max-width:420px; }
     .course-card{ grid-template-columns:1fr; }
-    .course-visual{ max-width:320px; margin:0 auto; }
+    .course-visual{ max-width:100%; aspect-ratio:4/3; }
     .team-grid{ grid-template-columns:repeat(2,1fr); }
     .contact-grid{ grid-template-columns:1fr; }
   }
@@ -598,7 +592,6 @@
     nav.main-nav, .header-cta{ display:none; }
     .social-rail{ display:none; }
     .hero{ padding-top:110px; }
-    .floating-rating{ position:static; margin-top:18px; display:inline-flex; }
     .stat-row{ gap:26px; flex-wrap:wrap; }
     .price-row{ grid-template-columns:1fr; gap:6px; }
     .price-row .pval{ font-size:21px; }
