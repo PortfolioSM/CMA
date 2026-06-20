@@ -4,6 +4,31 @@
     header.classList.toggle('scrolled', window.scrollY > 40);
   });
 
+  // hero neon video — force play in case autoplay attribute gets blocked
+  const neonVideo = document.querySelector('.neon-video');
+  if (neonVideo) {
+    neonVideo.muted = true;
+    neonVideo.defaultMuted = true;
+    const tryPlay = () => {
+      const playPromise = neonVideo.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          // autoplay blocked — retry once on first user interaction
+          const resumeOnInteract = () => {
+            neonVideo.play().catch(() => {});
+            document.removeEventListener('touchstart', resumeOnInteract);
+            document.removeEventListener('click', resumeOnInteract);
+          };
+          document.addEventListener('touchstart', resumeOnInteract, { once:true });
+          document.addEventListener('click', resumeOnInteract, { once:true });
+        });
+      }
+    };
+    if (neonVideo.readyState >= 2) { tryPlay(); }
+    else { neonVideo.addEventListener('loadeddata', tryPlay, { once:true }); }
+    neonVideo.load();
+  }
+
   // reveal on scroll
   const revealEls = document.querySelectorAll('.reveal');
   const io = new IntersectionObserver((entries) => {
