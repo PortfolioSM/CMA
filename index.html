@@ -16,6 +16,7 @@
 </head>
 <body>
 
+<div id="mainContent">
 
 <!-- ============ HEADER ============ -->
 <header id="siteHeader">
@@ -29,8 +30,8 @@
     <a href="#onas">O nas</a>
     <a href="#cennik">Cennik</a>
     <a href="#kursy">Kursy</a>
-    <a href="#zespol">Zespół</a>
     <a href="#opinie">Opinie</a>
+    <a href="#blog">Blog</a>
     <a href="#kontakt">Kontakt</a>
   </nav>
   <a href="#rezerwuj" class="btn-cta header-cta">Rezerwuj</a>
@@ -60,8 +61,8 @@
         <a href="#rezerwuj" class="btn-cta">Zaklepuję fotel</a>
         <a href="#cennik" class="btn-ghost">Zobacz cennik</a>
       </div>
-      <div class="hero-meta">
-        <span class="dot-live"></span> Otwarte teraz · do 20:00
+      <div class="hero-meta" id="heroStatus">
+        <span class="dot-live" id="statusDot"></span> <span id="statusText">Otwarte teraz · do 20:00</span>
       </div>
     </div>
 
@@ -126,7 +127,7 @@
   <div class="section-inner about-grid">
     <div class="about-img-wrap reveal">
       <div class="about-img-frame">
-        <img src="assets/fotel-gif.gif" alt="Fotel barberski w ĆMA Barbershop">
+        <video src="assets/fotel-gif.mp4" autoplay loop muted playsinline alt="Fotel barberski w ĆMA Barbershop"></video>
         <span class="about-img-tag">ĆMA · Oświęcim</span>
       </div>
       <div class="about-img-corner"></div>
@@ -263,10 +264,13 @@
     </div>
     <div class="course-card reveal">
       <div class="course-copy">
-        <p>Weekendowy kurs w ĆMIE to nauka cięcia, brody, pracy z klientem i ogarniania stanowiska w realnych warunkach. Bez lania wody — dużo praktyki, modele i opieka ludzi, którzy pracują za fotelem na co dzień.</p>
+        <p>Kurs w ĆMIE to nauka cięcia, brody, pracy z klientem i ogarniania stanowiska w realnych warunkach. Wybierz format dopasowany do Twoich umiejętności i dostępnego czasu — bez lania wody, dużo praktyki.</p>
+        <div class="course-labels">
+          <span class="course-label">Weekendowy</span>
+          <span class="course-label">Tygodniowy</span>
+          <span class="course-label">Miesięczny</span>
+        </div>
         <div class="course-meta">
-          <div><span>Format</span><b>Weekendowy</b></div>
-          <div><span>Czas</span><b>3 miesiące</b></div>
           <div><span>Miejsce</span><b>Oświęcim</b></div>
         </div>
         <ul class="course-list">
@@ -285,101 +289,11 @@
   </div>
 </section>
 
-<!-- ============ TEAM ============ -->
-<section class="team-section" id="zespol">
-  <div class="section-inner">
-    <div class="section-head center reveal">
-      <span class="eyebrow-num">05 — Zespół</span>
-      <h2>Ostrza w dobrych rękach.</h2>
-    </div>
-  </div>
-  <div class="team-grid reveal">
-    <div class="team-card">
-      <div class="team-photo">
-        <svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-          <defs><radialGradient id="bg-d" cx="50%" cy="30%" r="70%"><stop offset="0%" stop-color="#2a1014"/><stop offset="100%" stop-color="#0a0908"/></radialGradient></defs>
-          <rect width="300" height="400" fill="url(#bg-d)"/>
-          <circle cx="150" cy="140" r="58" fill="none" stroke="#ff2d3f" stroke-width="1" opacity="0.5"/>
-          <path d="M105 165 Q105 95 150 95 Q195 95 195 165 L195 200 Q150 230 105 200 Z" fill="#1c1512"/>
-          <path d="M150 95 Q195 95 195 150 Q170 140 150 145 Q130 140 105 150 Q105 95 150 95 Z" fill="#100c0a"/>
-          <rect x="90" y="195" width="120" height="120" fill="#160f0d"/>
-          <text x="150" y="365" text-anchor="middle" font-family="Anton" font-size="84" fill="#ff2d3f" opacity="0.85">D</text>
-        </svg>
-      </div>
-      <div class="team-info">
-        <div class="role">Master Barber</div>
-        <h3>Damian</h3>
-        <a href="#rezerwuj" class="team-link">Umów u Damiana →</a>
-      </div>
-    </div>
-    <div class="team-card">
-      <div class="team-photo">
-        <svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-          <defs><radialGradient id="bg-b" cx="50%" cy="30%" r="70%"><stop offset="0%" stop-color="#2a1014"/><stop offset="100%" stop-color="#0a0908"/></radialGradient></defs>
-          <rect width="300" height="400" fill="url(#bg-b)"/>
-          <circle cx="150" cy="140" r="58" fill="none" stroke="#ff2d3f" stroke-width="1" opacity="0.5"/>
-          <path d="M100 170 Q100 90 150 90 Q200 90 200 170 L200 205 Q150 235 100 205 Z" fill="#1c1512"/>
-          <path d="M150 90 Q200 90 198 145 Q175 160 150 150 Q125 160 102 145 Q100 90 150 90 Z" fill="#100c0a"/>
-          <path d="M120 175 Q150 195 180 175 Q175 200 150 205 Q125 200 120 175 Z" fill="#100c0a" opacity="0.9"/>
-          <rect x="85" y="200" width="130" height="115" fill="#160f0d"/>
-          <text x="150" y="365" text-anchor="middle" font-family="Anton" font-size="84" fill="#ff2d3f" opacity="0.85">B</text>
-        </svg>
-      </div>
-      <div class="team-info">
-        <div class="role">Senior Barber</div>
-        <h3>Bartek</h3>
-        <a href="#rezerwuj" class="team-link">Umów u Bartka →</a>
-      </div>
-    </div>
-    <div class="team-card">
-      <div class="team-photo">
-        <svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-          <defs><radialGradient id="bg-w" cx="50%" cy="30%" r="70%"><stop offset="0%" stop-color="#2a1014"/><stop offset="100%" stop-color="#0a0908"/></radialGradient></defs>
-          <rect width="300" height="400" fill="url(#bg-w)"/>
-          <circle cx="150" cy="140" r="58" fill="none" stroke="#ff2d3f" stroke-width="1" opacity="0.5"/>
-          <path d="M107 168 Q107 92 150 92 Q193 92 193 168 L193 202 Q150 232 107 202 Z" fill="#1c1512"/>
-          <path d="M150 92 Q193 92 191 130 Q170 122 150 126 Q130 122 109 130 Q107 92 150 92 Z" fill="#100c0a"/>
-          <rect x="92" y="198" width="116" height="117" fill="#160f0d"/>
-          <text x="150" y="365" text-anchor="middle" font-family="Anton" font-size="84" fill="#ff2d3f" opacity="0.85">D</text>
-        </svg>
-      </div>
-      <div class="team-info">
-        <div class="role">Barber</div>
-        <h3>Dawid</h3>
-        <a href="#rezerwuj" class="team-link">Umów u Dawida →</a>
-      </div>
-    </div>
-    <div class="team-card">
-      <div class="team-photo">
-        <svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-          <defs><radialGradient id="bg-p" cx="50%" cy="30%" r="70%"><stop offset="0%" stop-color="#2a1014"/><stop offset="100%" stop-color="#0a0908"/></radialGradient></defs>
-          <rect width="300" height="400" fill="url(#bg-p)"/>
-          <circle cx="150" cy="140" r="58" fill="none" stroke="#ff2d3f" stroke-width="1" opacity="0.5"/>
-          <path d="M103 172 Q100 88 150 88 Q200 88 197 172 L197 208 Q150 238 103 208 Z" fill="#1c1512"/>
-          <path d="M150 88 Q200 88 200 160 Q185 135 170 130 Q160 150 150 150 Q140 150 130 130 Q115 135 100 160 Q100 88 150 88 Z" fill="#100c0a"/>
-          <rect x="88" y="204" width="124" height="111" fill="#160f0d"/>
-          <text x="150" y="365" text-anchor="middle" font-family="Anton" font-size="84" fill="#ff2d3f" opacity="0.85">P</text>
-        </svg>
-      </div>
-      <div class="team-info">
-        <div class="role">Barber</div>
-        <h3>Patrycja</h3>
-        <a href="#rezerwuj" class="team-link">Umów u Patrycji →</a>
-      </div>
-    </div>
-  </div>
-  <div class="section-inner">
-    <div class="team-stats-bar reveal">
-      <span class="stars">★★★★★</span> 5,0 · 317 opinii na Booksy
-    </div>
-  </div>
-</section>
-
 <!-- ============ TESTIMONIALS ============ -->
 <section class="testi-section" id="opinie">
   <div class="section-inner">
     <div class="section-head center reveal">
-      <span class="eyebrow-num">06 — Opinie</span>
+      <span class="eyebrow-num">05 — Opinie</span>
       <h2>Ludzie wracają.</h2>
       <p class="section-lede">Najlepszy dowód? Klienci rezerwują kolejne wizyty i piszą wprost: dobra atmosfera, dokładne cięcie, pełna profeska.</p>
     </div>
@@ -450,6 +364,42 @@
   </div>
 </section>
 
+<!-- ============ BLOG ============ -->
+<section class="blog-section" id="blog">
+  <div class="section-inner">
+    <div class="section-head reveal">
+      <span class="eyebrow-num">06 — Blog</span>
+      <h2>Wiedza z fotela.</h2>
+    </div>
+    <div class="blog-grid reveal">
+      <article class="blog-card">
+        <div class="blog-num">01</div>
+        <h3>Zakola to nie wyrok. Jakie cięcie uratuje rzednące włosy?</h3>
+        <p>Zaczynasz zaczesywać włosy na boki w nadziei, że nikt nie zauważy ubytków? Zamiast walczyć z wiatrem i grawitacją, zmień strategię. Textured crop z dobrym zmatowieniem potrafi całkowicie zmienić proporcje twarzy.</p>
+        <a href="#blog-view" class="blog-link" data-blog-open data-article="blog-art-1">Czytaj dalej →</a>
+      </article>
+      <article class="blog-card">
+        <div class="blog-num">02</div>
+        <h3>Glinka, pasta czy puder? Dlaczego Twoja fryzura opada po dwóch godzinach.</h3>
+        <p>Rano stoisz w łazience kwadrans, układasz świetnego quiffa, a w połowie dnia na głowie zostaje oklapnięty bałagan. Winne rzadko są Twoje włosy — zazwyczaj to kwestia złego produktu i braku prestylera.</p>
+        <a href="#blog-view" class="blog-link" data-blog-open data-article="blog-art-2">Czytaj dalej →</a>
+      </article>
+      <article class="blog-card">
+        <div class="blog-num">03</div>
+        <h3>Taper, low czy skin fade? Krótki przewodnik po cieniowaniach.</h3>
+        <p>Siadasz na fotelu, słyszysz: „jak robimy boki?" i odpowiadasz: „krótko". A da się wyciągnąć z tego znacznie więcej. Kształt głowy, linia szczęki — to wszystko ma znaczenie przy wyborze cieniowania.</p>
+        <a href="#blog-view" class="blog-link" data-blog-open data-article="blog-art-3">Czytaj dalej →</a>
+      </article>
+      <article class="blog-card">
+        <div class="blog-num">04</div>
+        <h3>Swędzi, drapie i odstaje. Jak przetrwać zapuszczanie brody?</h3>
+        <p>Pierwsze tygodnie zapuszczania to test cierpliwości. Skóra piecze, włosy sterczą w każdą możliwą stronę, a bliscy pytają, czy wszystko u Ciebie w porządku. Zanim z nerwów sięgniesz po trymer — przeczytaj to.</p>
+        <a href="#blog-view" class="blog-link" data-blog-open data-article="blog-art-4">Czytaj dalej →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
 <!-- ============ FINAL CTA ============ -->
 <section class="final-cta" id="rezerwuj">
   <div class="hex-field"></div>
@@ -462,10 +412,10 @@
       <a href="https://booksy.com/pl-pl/320725_cma-barbershop_barber-shop_10151_oswiecim#ba_s=seo" class="btn-cta" target="_blank" rel="noopener">Rezerwuj online na Booksy</a>
       <a href="tel:+48531586439" class="btn-ghost">Zadzwoń: 531 586 439</a>
     </div>
-    <div class="hours-strip">
-      <div class="today"><b>Dziś</b>10:00 – 20:00</div>
-      <div><b>Sobota</b>09:00 – 17:00</div>
-      <div><b>Niedziela</b>Zamknięte</div>
+    <div class="hours-strip" id="hoursStrip">
+      <div class="today" id="stripDay0"><b id="stripDay0Label">Dziś</b><span id="stripDay0Hours">10:00 – 20:00</span></div>
+      <div id="stripDay1"><b id="stripDay1Label">Sobota</b><span id="stripDay1Hours">09:00 – 17:00</span></div>
+      <div id="stripDay2"><b id="stripDay2Label">Niedziela</b><span id="stripDay2Hours">Zamknięte</span></div>
     </div>
   </div>
 </section>
@@ -497,13 +447,13 @@
       <div class="info-block">
         <h4>Godziny otwarcia</h4>
         <div class="hours-table">
-          <div class="hrow today"><span>Poniedziałek</span><span>10:00–20:00</span></div>
-          <div class="hrow today"><span>Wtorek</span><span>10:00–20:00</span></div>
-          <div class="hrow today"><span>Środa</span><span>10:00–20:00</span></div>
-          <div class="hrow today"><span>Czwartek</span><span>10:00–20:00</span></div>
-          <div class="hrow today"><span>Piątek</span><span>10:00–20:00</span></div>
-          <div class="hrow"><span>Sobota</span><span>09:00–17:00</span></div>
-          <div class="hrow closed"><span>Niedziela</span><span>Zamknięte</span></div>
+          <div class="hrow" data-day="1"><span>Poniedziałek</span><span>10:00–20:00</span></div>
+          <div class="hrow" data-day="2"><span>Wtorek</span><span>10:00–20:00</span></div>
+          <div class="hrow" data-day="3"><span>Środa</span><span>10:00–20:00</span></div>
+          <div class="hrow" data-day="4"><span>Czwartek</span><span>10:00–20:00</span></div>
+          <div class="hrow" data-day="5"><span>Piątek</span><span>10:00–20:00</span></div>
+          <div class="hrow" data-day="6"><span>Sobota</span><span>09:00–17:00</span></div>
+          <div class="hrow closed" data-day="0"><span>Niedziela</span><span>Zamknięte</span></div>
         </div>
       </div>
       <div class="contact-actions">
@@ -552,6 +502,81 @@
 
 <div class="sticky-cta">
   <a href="#rezerwuj" class="btn-cta">Zaklepuję fotel</a>
+</div>
+
+</div><!-- /#mainContent -->
+
+<!-- ============ BLOG VIEW (SPA) ============ -->
+<div id="blogView" class="blog-view" aria-hidden="true">
+  <div class="blog-view-bar">
+    <a href="#" class="blog-brand">ĆMA<span>.</span></a>
+    <button class="blog-back-btn" id="blogBack">← Wróć do strony</button>
+  </div>
+  <div class="blog-view-inner">
+    <div class="blog-view-header">
+      <span class="eyebrow-num">06 — Blog</span>
+      <h2>Wiedza z fotela.</h2>
+    </div>
+    <div class="blog-articles">
+
+      <article class="blog-article" id="blog-art-1">
+        <div class="blog-article-num">01</div>
+        <h3>Zakola to nie wyrok. Jakie cięcie uratuje rzednące włosy?</h3>
+        <p>Stoisz rano przed lustrem, przeczesujesz włosy dłonią i widzisz, że linia czoła znowu uciekła o milimetr do tyłu. Zaczynasz zaczesywać pasma na boki. Używasz więcej pomady. Walczysz z każdym podmuchem wiatru, bo wiesz, że jeden silniejszy powiew zrujnuje Twoją misterną konstrukcję.</p>
+        <p>Brzmi znajomo? Faceci tracą włosy. To biologia. Ale najgorsze, co możesz zrobić, to udawać, że problemu nie ma i tworzyć na głowie architektoniczne iluzje. Dobrze dobrane cięcie potrafi całkowicie zmienić proporcje twarzy i ukryć to, co trzeba. Bez codziennego stresu przed lustrem.</p>
+        <h4>Najgorsze błędy przy rzednących włosach</h4>
+        <p>Zanim powiemy, co robić, ustalmy, czego kategorycznie unikać. Jeśli masz zakola lub przerzedzenia na czubku głowy, natychmiast zrezygnuj z zaczesywania włosów do tyłu (slick back) — to fryzura, która niczym szkło powiększające obnaża linię zarostu. Zbyt długie włosy na bokach też nie pomogą: gdy boki są gęste i ciemne, a góra rzadka, tworzy się kontrast, który tylko podkreśla braki. Unikaj też ciężkich, błyszczących pomad — żele sklejają włosy w grube pasma, przez które prześwituje skóra.</p>
+        <h4>Textured crop – Twój nowy najlepszy przyjaciel</h4>
+        <p>To obecnie najmocniejsza broń w walce z zakolami. Textured crop opiera się na krótkich, mocno wycieniowanych bokach i grzywce skierowanej do przodu. Grzywka naturalnie opada na czoło, maskując linię zakoli, a mocne teksturowanie góry sprawia, że włosy układają się warstwami — wydaje się, że jest ich dwa razy więcej. Rano wystarczy dosłownie 30 sekund, żeby ogarnąć tę fryzurę.</p>
+        <h4>Krótko i bez litości – Buzz cut</h4>
+        <p>A co, jeśli przerzedzenia są już bardzo widoczne? Wtedy najlepszą strategią jest atak. Buzz cut, czyli cięcie maszynką na krótko, to wybór facetów pewnych siebie. Krótkie boki z płynnym fadem i minimalna długość na górze zacierają granicę między miejscami, gdzie włosy rosną gęsto, a tymi, gdzie jest ich mniej. Wyglądasz ostro, męsko i przestajesz się przejmować wiatrem. Sekretem jest matowe wykończenie i objętość — puder do włosów lub matowa pasta nakładana w minimalnych ilościach. Zamiast kombinować z zapuszczaniem, przy najbliższej wizycie powiedz swojemu barberowi, żeby spróbował krótszego cięcia z teksturowaną górą.</p>
+      </article>
+
+      <article class="blog-article" id="blog-art-2">
+        <div class="blog-article-num">02</div>
+        <h3>Glinka, pasta czy puder? Dlaczego Twoja fryzura opada po dwóch godzinach.</h3>
+        <p>Wychodzisz z łazienki — wyglądasz jak milion dolarów. Świetny quiff, idealna tekstura. Wsiadasz do samochodu, wchodzisz do biura, idziesz na kawę. Mijają dwie godziny, patrzysz w lustro, a na głowie masz oklapnięty bałagan.</p>
+        <p>Winne rzadko są Twoje włosy. Najczęściej problem leży w dwóch rzeczach: pominąłeś etap przygotowania włosów albo używasz kosmetyku, który kompletnie nie pasuje do Twojej fryzury.</p>
+        <h4>Pre-styler, czyli fundament dobrej fryzury</h4>
+        <p>Wielu facetów myje włosy, suszy je na siłę ręcznikiem, a potem próbuje ulepić fryzurę z twardej glinki. To nie ma prawa działać. Tym fundamentem jest pre-styler. Najpopularniejszym rozwiązaniem jest tonik z solą morską — spryskujesz nim wilgotne włosy po myciu i dopiero wtedy suszysz, kierując strumień ciepłego powietrza tam, gdzie chcesz. Sól morska usztywnia włos, nadaje mu objętości i "chropowatości". Kiedy włosy są już suche, fryzura w 80% jest gotowa. Kosmetyk końcowy ma ją tylko utrwalić.</p>
+        <h4>Puder do włosów – objętość i błyskawiczny efekt</h4>
+        <p>Masz cienkie włosy? Nosisz cropa lub luźnego quiffa? Puder to Twój ratunek. Nakładasz go na całkowicie suche włosy u samej nasady. Daje ekstremalny mat i niesamowitą objętość. Gdy fryzura opadnie w ciągu dnia, wystarczy, że przeczeszesz ją palcami — odzyska swój kształt, bo puder działa przez kilkanaście godzin.</p>
+        <h4>Glinka (Clay) – mocny chwyt i tekstura</h4>
+        <p>Glinki to waga ciężka. Są gęste, trudne do wybrania z puszki i wymagają solidnego roztarcia w dłoniach. Idealne dla grubych, opornych włosów — dają mocny chwyt i naturalny mat. Ważne: nakładaj glinkę małymi porcjami. Jeśli nałożysz za dużo na cienkie włosy, produkt je obciąży i fryzura opadnie pod własnym ciężarem.</p>
+        <h4>Pasta do włosów – złoty środek</h4>
+        <p>Jeśli nie wiesz, od czego zacząć, zacznij od pasty. Ma kremową konsystencję, łatwo nakłada się na włosy i daje średni chwyt. Pasta jest wybaczająca: nawet jeśli nałożysz jej odrobinę za dużo, nie skleisz włosów tak, jak zrobiłaby to ciężka pomada. Klucz do trwałej fryzury to proporcje: dobry pre-styler na mokre włosy, suszarka, a na koniec zaledwie odrobina matowego finiszu.</p>
+      </article>
+
+      <article class="blog-article" id="blog-art-3">
+        <div class="blog-article-num">03</div>
+        <h3>Taper, low czy skin fade? Krótki przewodnik po cieniowaniach.</h3>
+        <p>Siadasz na fotelu, narzucają na Ciebie pelerynę, a w lustrze pada standardowe pytanie: „Jak robimy boki?". Przez lata odpowiedzią było proste: „Krótko". Dzisiaj to już nie wystarczy. Boki to rama dla Twojej twarzy — dobrze wycieniowane potrafią wyostrzyć rysy, ukryć odstające uszy i zagrać z oprawkami okularów.</p>
+        <h4>Taper fade – klasyka i elegancja</h4>
+        <p>To najbardziej subtelna opcja. W taper fade cieniujemy wyłącznie baczki i sam dół karku. Reszta boków pozostaje pełniejsza. Dla facetów pracujących w środowiskach z restrykcyjnym dress codem i dla tych, którzy mają odstające uszy — dłuższe boki naturalnie je maskują. Sprawdzi się też idealnie u osób noszących grube oprawki okularów.</p>
+        <h4>Low fade – bezpieczny start</h4>
+        <p>Tutaj cięcie do zera zaczyna się bardzo nisko (tuż nad uszami i na karku) i szybko przechodzi w dłuższą formę. Jeśli masz węższą twarz i chcesz dodać jej trochę szerokości, low fade zostawi odpowiednią ilość włosów po bokach, żeby zrównoważyć proporcje. Często łączy się go z fryzurami typu side part.</p>
+        <h4>Mid fade – uniwersalny kompromis</h4>
+        <p>Najczęściej wybierane cieniowanie w barbershopach. Punkt zerowy zaczyna się na wysokości skroni i idzie w linii prostej dookoła głowy. Daje mocny kontrast, ale zostawia dość włosów, by fryzura płynnie łączyła się z górą. Pasuje do większości kształtów twarzy i świetnie współgra z pompadourem czy quiffem. Dobrze się też starzeje — wygląda schludnie nawet 2 tygodnie po wizycie.</p>
+        <h4>High fade / Skin fade – ostre cięcie</h4>
+        <p>Cieniowanie zaczyna się wysoko — często na linii czoła, bardzo szybko przechodząc w długość górną. Daje agresywny, ostry i kontrastowy wygląd. Dla facetów o okrągłych twarzach: wysokie wygolenie boków optycznie wysmukla i wydłuża twarz. Ma jedną wadę — wymaga regularnych wizyt co 2-3 tygodnie. Zamiast zgadywać, zrób zrzut ekranu fryzury, która Ci się podoba i pokaż ją swojemu barberowi. Dobry rzemieślnik powie Ci wprost, czy dane rozwiązanie zadziała z Twoim kształtem głowy.</p>
+      </article>
+
+      <article class="blog-article" id="blog-art-4">
+        <div class="blog-article-num">04</div>
+        <h3>Swędzi, drapie i odstaje. Jak przetrwać zapuszczanie brody?</h3>
+        <p>Decyzja podjęta: zapuszczasz brodę. Pierwszy tydzień to luz — po prostu się nie golisz. W drugim tygodniu zaczynasz wyglądać intrygująco. A na przełomie trzeciego i czwartego pojawia się kryzys. Skóra piecze tak, jakby ktoś wbijał w nią małe igły. Włosy odstają we wszystkich możliwych kierunkach, a Twoja partnerka coraz częściej rzuca mordercze spojrzenia. Większość facetów łamie się w tym momencie. Błąd.</p>
+        <h4>Dlaczego zapuszczanie brody tak swędzi?</h4>
+        <p>To prosta fizyka i biologia w jednym. Kiedy przez lata goliłeś twarz maszynką, ścinałeś włos pod ostrym kątem. Kiedy ten włos zaczyna rosnąć, ma ostrą końcówkę, która zawija się i podrażnia skórę. Dodatkowo rosnący zarost wyciąga ze skóry wilgoć — skóra wysusza się, zaczyna swędzieć, a naskórek zaczyna się łuszczyć. Co musisz zrobić? Złuszczyć naskórek i nawilżyć skórę.</p>
+        <h4>Krok 1: Kartacz – Twoja nowa codzienna rutyna</h4>
+        <p>Zwykły plastikowy grzebień możesz odłożyć do szuflady. Potrzebujesz kartacza — szczotki z włosiem dzika. Codzienne, porządne szczotkowanie działa jak brutalny, ale bardzo potrzebny peeling: usuwasz martwy naskórek, poprawiasz ukrwienie i zmuszasz niesforne pasma do rośnięcia we właściwym kierunku. Rób to rano i wieczorem — już po dwóch dniach poczujesz ogromną ulgę.</p>
+        <h4>Krok 2: Olejek do brody – ratunek dla skóry</h4>
+        <p>Olejek jest w pierwszej kolejności dla skóry pod brodą, a dopiero w drugiej dla samych włosów. Kiedy umyjesz twarz i wyszczotkujesz zarost, rozetrzyj w dłoniach 3-4 krople dobrego olejku i wmasuj go głęboko opuszkami palców prosto w skórę. Olejek przywróci równowagę, zlikwiduje uczucie ściągnięcia i zmiękczy ostre końcówki włosów.</p>
+        <h4>Krok 3: Pierwsza wizyta u barbera</h4>
+        <p>Największy błąd nowicjuszy to chwytanie za trymer domowy "żeby tylko podciąć linię na szyi". Jedno złe pociągnięcie i wchodzisz z linią za wysoko. Daj brodzie rosnąć całkowicie swobodnie przez co najmniej 4-5 tygodni. Dopiero z taką bazą udaj się do barbershopu — doświadczony rzemieślnik wyznaczy Ci profesjonalną linię szyi i policzków. Kiedy będziesz miał dobrze zarysowany kontur, dalsze zapuszczanie to już czysta przyjemność.</p>
+      </article>
+
+    </div>
+  </div>
 </div>
 
 <script src="script.js"></script>
