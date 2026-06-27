@@ -127,53 +127,6 @@
 
   updateHoursUI();
 
-  // ── blog SPA view ──────────────────────────────────────────────
-  const blogView    = document.getElementById('blogView');
-  const mainContent = document.getElementById('mainContent');
-  const blogBack    = document.getElementById('blogBack');
-
-  function openBlogView(articleId) {
-    mainContent.classList.add('hidden');
-    blogView.classList.add('active');
-    blogView.setAttribute('aria-hidden', 'false');
-    history.pushState({ blog: true, article: articleId }, '', '#blog-view');
-
-    if (articleId) {
-      // poczekaj na render, potem scrolluj do artykułu (z offsetem sticky baru)
-      requestAnimationFrame(() => {
-        const target = document.getElementById(articleId);
-        if (target) {
-          const barHeight = document.querySelector('.blog-view-bar')?.offsetHeight || 64;
-          const top = target.getBoundingClientRect().top + blogView.scrollTop - barHeight - 24;
-          blogView.scrollTo({ top, behavior: 'instant' });
-        }
-      });
-    } else {
-      blogView.scrollTo(0, 0);
-    }
-  }
-
-  function closeBlogView() {
-    blogView.classList.remove('active');
-    blogView.setAttribute('aria-hidden', 'true');
-    mainContent.classList.remove('hidden');
-    history.pushState({}, '', window.location.pathname);
-    document.getElementById('blog').scrollIntoView({ behavior: 'smooth' });
-  }
-
-  document.querySelectorAll('[data-blog-open]').forEach(el => {
-    el.addEventListener('click', e => {
-      e.preventDefault();
-      openBlogView(el.dataset.article || null);
-    });
-  });
-
-  if (blogBack) blogBack.addEventListener('click', closeBlogView);
-
-  window.addEventListener('popstate', e => {
-    if (!e.state?.blog && blogView.classList.contains('active')) closeBlogView();
-  });
-
   // pricing tabs
   const tabs = document.querySelectorAll('.price-tab');
   const panels = document.querySelectorAll('.price-panel');
