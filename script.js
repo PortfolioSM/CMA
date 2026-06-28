@@ -29,14 +29,35 @@
     neonVideo.load();
   }
 
-  // reveal on scroll
+  // reveal on scroll — IntersectionObserver + scroll fallback
   const revealEls = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+
+  function checkReveal() {
+    const vh = window.innerHeight;
+    revealEls.forEach(el => {
+      if (el.classList.contains('in')) return;
+      const r = el.getBoundingClientRect();
+      // element widoczny gdy jego góra jest powyżej 88% wysokości okna
+      if (r.top < vh * 0.88 && r.bottom > 0) {
+        el.classList.add('in');
+      }
     });
-  }, { threshold: 0.12 });
-  revealEls.forEach(el => io.observe(el));
+  }
+
+  // IntersectionObserver jako główna metoda
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => io.observe(el));
+  }
+
+  // Fallback scroll — działa zawsze (naprawia przypadki gdy IO nie odpala)
+  window.addEventListener('scroll', checkReveal, { passive: true });
+  // Sprawdź od razu po załadowaniu (elementy hero i above-fold)
+  checkReveal();
 
   // ── godziny otwarcia ──────────────────────────────────────────
   const HOURS = {
