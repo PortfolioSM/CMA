@@ -11,18 +11,21 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pl_PL">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" type="image/jpeg" href="assets/logo-cma.jpg">
+<link rel="icon" type="image/png" href="assets/logo-cma.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap"></noscript>
+<link rel="preload" href="assets/neon-cma.jpg" as="image" fetchpriority="high">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<div id="mainContent">
 
 <!-- ============ HEADER ============ -->
 <header id="siteHeader">
   <a href="#" class="brand">
     <div class="brand-mark">
-      <img src="assets/logo-cma.jpg" alt="Logo ĆMA Barbershop">
+      <img src="assets/logo-cma.png" alt="Logo ĆMA Barbershop">
     </div>
     <span class="brand-name">ĆMA <span>Barbershop</span></span>
   </a>
@@ -47,6 +50,7 @@
 </aside>
 
 <!-- ============ HERO ============ -->
+<main id="mainContent">
 <section class="hero">
   <div class="hex-field"></div>
   <div class="hero-bg-glow"></div>
@@ -71,8 +75,9 @@
 
     <div class="hero-visual">
       <div class="spotlight-ring">
-        <video class="neon-video" autoplay muted loop playsinline webkit-playsinline="true" preload="auto" poster="assets/neon-cma.jpg">
+        <video class="neon-video" autoplay muted loop playsinline webkit-playsinline="true" preload="auto" poster="assets/neon-cma.jpg" aria-label="Neon ĆMA Barbershop">
           <source src="assets/cma-neon-loop.mp4" type="video/mp4">
+          <track kind="captions" src="" label="Brak napisów" default>
         </video>
         <div class="particle" style="left:30%; top:70%; width:3px; height:3px; --drift:14px; animation-delay:0s;"></div>
         <div class="particle" style="left:55%; top:75%; width:2px; height:2px; --drift:-18px; animation-delay:2.3s;"></div>
@@ -130,7 +135,9 @@
   <div class="section-inner about-grid">
     <div class="about-img-wrap reveal">
       <div class="about-img-frame">
-        <video src="assets/fotel-gif.mp4" autoplay loop muted playsinline alt="Fotel barberski w ĆMA Barbershop"></video>
+        <video src="assets/fotel-gif.mp4" autoplay loop muted playsinline aria-label="Fotel barberski w ĆMA Barbershop">
+          <track kind="captions" src="" label="Brak napisów" default>
+        </video>
         <span class="about-img-tag">ĆMA · Oświęcim</span>
       </div>
       <div class="about-img-corner"></div>
@@ -285,7 +292,7 @@
         <a href="#kontakt" class="btn-cta">Zapytaj o kurs</a>
       </div>
       <div class="course-visual">
-        <img src="assets/wnetrze-cma.jpg" alt="Wnętrze ĆMA Barbershop — sala szkoleniowa" class="course-photo">
+        <img src="assets/wnetrze-cma.jpg" alt="Wnętrze ĆMA Barbershop — sala szkoleniowa" class="course-photo" loading="lazy">
         <div class="badge">ZAPISY OTWARTE · ZAJMIJ SWÓJ FOTEL NA SZKOLENIU</div>
       </div>
     </div>
@@ -467,15 +474,15 @@
       <span class="eyebrow-num">08 - Kontakt</span>
       <h2 style="margin-bottom:30px;">Wpadnij.</h2>
       <div class="info-block">
-        <h4>Adres</h4>
+        <h3>Adres</h3>
         <p>Marii Konopnickiej 5<br>32-600 Oświęcim</p>
       </div>
       <div class="info-block">
-        <h4>Telefon</h4>
+        <h3>Telefon</h3>
         <p><a href="tel:+48531586439" style="transition:color .2s ease;" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color=''">531 586 439</a></p>
       </div>
       <div class="info-block">
-        <h4>Godziny otwarcia</h4>
+        <h3>Godziny otwarcia</h3>
         <div class="hours-table">
           <div class="hrow" data-day="1"><span>Poniedziałek</span><span>10:00–20:00</span></div>
           <div class="hrow" data-day="2"><span>Wtorek</span><span>10:00–20:00</span></div>
@@ -494,12 +501,14 @@
   </div>
 </section>
 
+</main>
+
 <!-- ============ FOOTER ============ -->
 <footer>
   <div class="footer-top">
     <div class="brand">
       <div class="brand-mark">
-        <img src="assets/logo-cma.jpg" alt="Logo ĆMA Barbershop">
+        <img src="assets/logo-cma.png" alt="Logo ĆMA Barbershop">
       </div>
       <span class="brand-name">ĆMA <span>Barbershop</span></span>
     </div>
@@ -534,7 +543,6 @@
   <a href="#rezerwuj" class="btn-cta">Zaklepuję fotel</a>
 </div>
 
-</div><!-- /#mainContent -->
 <script src="script.js"></script>
 
 </body>
