@@ -1,4 +1,4 @@
-  @import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+  /* Google Fonts loaded via <link> in HTML head for non-render-blocking delivery */
 
   :root{
     --bg: #0a0908;
@@ -79,12 +79,12 @@
     width:42px; height:42px; border-radius:50%;
     border:1px solid rgba(255,45,63,0.5);
     display:flex; align-items:center; justify-content:center;
-    background:#f5f0e6;
+    background:transparent;
     overflow:hidden;
     box-shadow:0 0 0 3px rgba(255,45,63,0.08);
     flex-shrink:0;
   }
-  .brand-mark img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .brand-mark img{ width:100%; height:100%; object-fit:contain; display:block; }
   .brand-name{ font-family:var(--display); font-size:19px; letter-spacing:0.5px; text-transform:uppercase; }
   .brand-name span{ color:var(--red); }
 
@@ -218,7 +218,7 @@
   .hero h1{
     font-family:var(--display); text-transform:uppercase;
     font-size:clamp(56px, 8.6vw, 122px); line-height:1.08; letter-spacing:-1px;
-    margin-bottom:8px;
+    margin-bottom:0; padding-bottom:32px;
   }
   .hero h1 .outline-text{
     -webkit-text-stroke:1.5px var(--cream); color:transparent;
@@ -659,7 +659,7 @@
   .contact-info{ background:var(--bg); padding:56px clamp(28px,4vw,64px); }
   .info-block{ margin-bottom:34px; padding-bottom:34px; border-bottom:1px solid var(--card-line); }
   .info-block:last-of-type{ border-bottom:none; }
-  .info-block h4{ font-family:var(--mono); font-size:11.5px; color:var(--red); text-transform:uppercase; letter-spacing:1.5px; margin-bottom:14px; }
+  .info-block h3{ font-family:var(--mono); font-size:11.5px; color:var(--red); text-transform:uppercase; letter-spacing:1.5px; margin-bottom:14px; }
   .info-block p{ font-size:17px; line-height:1.5; }
   .hours-table{ display:flex; flex-direction:column; gap:8px; }
   .hours-table .hrow{ display:flex; justify-content:space-between; font-size:14.5px; color:var(--cream-dim); padding:6px 0; }
