@@ -138,3 +138,4 @@
       document.querySelector(`.price-panel[data-panel="${tab.dataset.tab}"]`).classList.add('active');
     });
   });
+ 
