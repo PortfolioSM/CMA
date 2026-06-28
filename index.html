@@ -88,8 +88,8 @@
       <div class="floating-rating">
         <span class="stars">★★★★★</span>
         <div>
-          <span class="num">5,0</span><br>
-          <span class="lbl">300+ opinii · Booksy</span>
+          <span class="num" data-stat="booksy_rating">5,0</span><br>
+          <span class="lbl" data-stat="booksy_lbl">300+ opinii · Booksy</span>
         </div>
       </div>
     </div>
@@ -154,9 +154,9 @@
         <li>combo, repigmentacja i szybkie dodatki</li>
       </ul>
       <div class="stat-row">
-        <div class="stat"><b>300+</b><span>opinii Booksy</span></div>
-        <div class="stat"><b>5,0</b><span>średnia ocena</span></div>
-        <div class="stat"><b>5</b><span>barberów na fotelu</span></div>
+        <div class="stat"><b data-stat="booksy_count">300+</b><span>opinii Booksy</span></div>
+        <div class="stat"><b data-stat="booksy_rating">5,0</b><span>średnia ocena</span></div>
+        <div class="stat"><b data-stat="barberzy">5</b><span>barberów na fotelu</span></div>
       </div>
     </div>
   </div>
@@ -312,65 +312,15 @@
 
   <div class="testi-track-wrap reveal">
     <div class="testi-track" id="testiTrack">
-      <div class="testi-card">
-        <span class="testi-stars">★★★★★</span>
-        <p>Pełna profeska, luźna atmosfera i świetne strzyżenie za każdym razem. Wracam tu już ponad rok i nigdy się nie zawiodłem.</p>
-        <div class="testi-who"><div class="testi-avatar">N</div><div><div class="name">Nikola</div><div class="tag">Klientka · Booksy</div></div></div>
-      </div>
-      <div class="testi-card">
-        <span class="testi-stars">★★★★★</span>
-        <p>Świetna obsługa, dbałość o detale i super efekt końcowy. Klimat lokalu robi robotę — czuć, że to nie jest przypadkowe miejsce.</p>
-        <div class="testi-who"><div class="testi-avatar">J</div><div><div class="name">Jacek</div><div class="tag">Klient · Booksy</div></div></div>
-      </div>
-      <div class="testi-card">
-        <span class="testi-stars">★★★★★</span>
-        <p>Byłem pierwszy raz i jestem bardzo zadowolony. Konsultacja przed cięciem zrobiła różnicę. Polecam każdemu, kto szuka konkretu.</p>
-        <div class="testi-who"><div class="testi-avatar">J</div><div><div class="name">Jakub</div><div class="tag">Klient · Booksy</div></div></div>
-      </div>
-      <div class="testi-card">
-        <span class="testi-stars">★★★★★</span>
-        <p>Rezerwacja w 30 sekund przez Booksy, na miejscu zero czekania. Fade dokładnie taki, o jaki prosiłem. Punkt na mapie barberów w Oświęcimiu.</p>
-        <div class="testi-who"><div class="testi-avatar">M</div><div><div class="name">Michał</div><div class="tag">Klient · Booksy</div></div></div>
-      </div>
-      <div class="testi-card">
-        <span class="testi-stars">★★★★★</span>
-        <p>Brodę miałem zaniedbaną od miesięcy. Wyszedłem jak nowo narodzony. Repigmentacja na siwe włosy — efekt naturalny, nie sztuczny.</p>
-        <div class="testi-who"><div class="testi-avatar">P</div><div><div class="name">Piotr</div><div class="tag">Klient · Booksy</div></div></div>
-      </div>
-      <!-- duplicate set for seamless marquee -->
-      <div class="testi-card">
-        <span class="testi-stars">★★★★★</span>
-        <p>Pełna profeska, luźna atmosfera i świetne strzyżenie za każdym razem. Wracam tu już ponad rok i nigdy się nie zawiodłem.</p>
-        <div class="testi-who"><div class="testi-avatar">N</div><div><div class="name">Nikola</div><div class="tag">Klientka · Booksy</div></div></div>
-      </div>
-      <div class="testi-card">
-        <span class="testi-stars">★★★★★</span>
-        <p>Świetna obsługa, dbałość o detale i super efekt końcowy. Klimat lokalu robi robotę — czuć, że to nie jest przypadkowe miejsce.</p>
-        <div class="testi-who"><div class="testi-avatar">J</div><div><div class="name">Jacek</div><div class="tag">Klient · Booksy</div></div></div>
-      </div>
-      <div class="testi-card">
-        <span class="testi-stars">★★★★★</span>
-        <p>Byłem pierwszy raz i jestem bardzo zadowolony. Konsultacja przed cięciem zrobiła różnicę. Polecam każdemu, kto szuka konkretu.</p>
-        <div class="testi-who"><div class="testi-avatar">J</div><div><div class="name">Jakub</div><div class="tag">Klient · Booksy</div></div></div>
-      </div>
-      <div class="testi-card">
-        <span class="testi-stars">★★★★★</span>
-        <p>Rezerwacja w 30 sekund przez Booksy, na miejscu zero czekania. Fade dokładnie taki, o jaki prosiłem. Punkt na mapie barberów w Oświęcimiu.</p>
-        <div class="testi-who"><div class="testi-avatar">M</div><div><div class="name">Michał</div><div class="tag">Klient · Booksy</div></div></div>
-      </div>
-      <div class="testi-card">
-        <span class="testi-stars">★★★★★</span>
-        <p>Brodę miałem zaniedbaną od miesięcy. Wyszedłem jak nowo narodzony. Repigmentacja na siwe włosy — efekt naturalny, nie sztuczny.</p>
-        <div class="testi-who"><div class="testi-avatar">P</div><div><div class="name">Piotr</div><div class="tag">Klient · Booksy</div></div></div>
-      </div>
+      <!-- renderowane przez data.js + script.js -->
     </div>
   </div>
 
   <div class="section-inner">
     <div class="testi-badge-row reveal">
-      <div class="source-badge"><b>5,0 ★</b> 300+ opinii na Booksy</div>
-      <div class="source-badge"><b>4,9 ★</b> Google</div>
-      <div class="source-badge"><b>500+</b> obserwujących na Instagramie</div>
+      <div class="source-badge"><b data-stat="booksy_rating">5,0</b> ★ <span data-stat="booksy_count">300+</span> opinii na Booksy</div>
+      <div class="source-badge"><b data-stat="google_rating">4,9</b> ★ Google</div>
+      <div class="source-badge"><b data-stat="instagram">500+</b> obserwujących na Instagramie</div>
     </div>
   </div>
 </section>
@@ -536,14 +486,59 @@
   </div>
   <div class="footer-bottom">
     <span>© 2026 ĆMA Barbershop · Oświęcim</span>
-    <span>Lecisz na światło.</span>
+    <a href="privacy.html" style="color:var(--grey);text-decoration:none;font-size:13px;">Polityka prywatności</a>
   </div>
 </footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HairSalon",
+  "name": "ĆMA Barbershop",
+  "description": "Ciemny barbershop w Oświęcimiu. Strzyżenie męskie, broda, combo, buzz cut i repigmentacja. Konkretna konsultacja i cięcie, po którym chce się wracać.",
+  "url": "https://portfoliosm.github.io/CMA/",
+  "telephone": "+48531586439",
+  "priceRange": "$$",
+  "image": "https://portfoliosm.github.io/CMA/assets/neon-cma.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Marii Konopnickiej 5",
+    "addressLocality": "Oświęcim",
+    "postalCode": "32-600",
+    "addressCountry": "PL"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 50.0341,
+    "longitude": 19.2094
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "10:00",
+      "closes": "20:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "09:00",
+      "closes": "17:00"
+    }
+  ],
+  "sameAs": [
+    "https://www.instagram.com/cmabarbershop/",
+    "https://www.facebook.com/cmabarbershop/",
+    "https://booksy.com/pl-pl/320725_cma-barbershop_barber-shop_10151_oswiecim"
+  ]
+}
+</script>
 
 <div class="sticky-cta">
   <a href="#rezerwuj" class="btn-cta">Zaklepuję fotel</a>
 </div>
 
+<script src="data.js"></script>
 <script src="script.js"></script>
 
 </body>
