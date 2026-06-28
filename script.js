@@ -127,6 +127,41 @@
 
   updateHoursUI();
 
+  // ── renderowanie danych z data.js ────────────────────────────
+  if (typeof CMA_DATA !== 'undefined') {
+
+    // 1. statystyki — wszystkie elementy z data-stat
+    document.querySelectorAll('[data-stat]').forEach(el => {
+      const key = el.dataset.stat;
+      if (key === 'booksy_lbl') {
+        el.textContent = CMA_DATA.stats.booksy_count + ' opinii · Booksy';
+      } else if (CMA_DATA.stats[key] !== undefined) {
+        el.textContent = CMA_DATA.stats[key];
+      }
+    });
+
+    // 2. karty opinii — renderuj × 2 dla płynnego marquee
+    const track = document.getElementById('testiTrack');
+    if (track && CMA_DATA.opinie.length) {
+      const makeCard = (o) => {
+        const tag = o.plec === 'K' ? 'Klientka' : 'Klient';
+        return `<div class="testi-card">
+          <span class="testi-stars">★★★★★</span>
+          <p>${o.tresc}</p>
+          <div class="testi-who">
+            <div class="testi-avatar">${o.imie[0]}</div>
+            <div>
+              <div class="name">${o.imie}</div>
+              <div class="tag">${tag} · ${o.zrodlo}</div>
+            </div>
+          </div>
+        </div>`;
+      };
+      const cards = CMA_DATA.opinie.map(makeCard).join('');
+      track.innerHTML = cards + cards; // duplikacja dla marquee
+    }
+  }
+
   // pricing tabs
   const tabs = document.querySelectorAll('.price-tab');
   const panels = document.querySelectorAll('.price-panel');
@@ -138,4 +173,3 @@
       document.querySelector(`.price-panel[data-panel="${tab.dataset.tab}"]`).classList.add('active');
     });
   });
- 
