@@ -17,12 +17,11 @@
   }
 
   *{ margin:0; padding:0; box-sizing:border-box; }
-  html{ scroll-behavior:smooth; background:var(--bg); }
+  html{ scroll-behavior:smooth; background:var(--bg); overflow-x:hidden; }
   body{
     background:var(--bg);
     color:var(--cream);
     font-family:var(--body);
-    overflow-x:hidden;
     -webkit-font-smoothing:antialiased;
   }
   ::selection{ background:var(--red); color:var(--cream); }
